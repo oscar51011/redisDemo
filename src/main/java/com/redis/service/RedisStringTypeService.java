@@ -1,8 +1,5 @@
 package com.redis.service;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
@@ -12,6 +9,7 @@ import com.redis.exception.RedisException;
 
 /**
  * String Type 一般操作 redis 服務
+ * 
  * 
  * @author oscar51011
  *
