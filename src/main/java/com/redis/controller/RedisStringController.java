@@ -1,10 +1,12 @@
 package com.redis.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.redis.bean.RedisStringParamBean;
 import com.redis.service.RedisStringTypeService;
 
 @RestController
@@ -14,31 +16,31 @@ public class RedisStringController {
 	@Autowired
 	private RedisStringTypeService redisStringTypeService;
 	
-	@RequestMapping("/setTestData")
-	public String setTestData(@RequestBody String data)
+	@PostMapping("/setTestData")
+	public String setTestData(@RequestBody RedisStringParamBean paramBean)
 	{
-		redisStringTypeService.setTestData(data);
+		redisStringTypeService.setTestData(paramBean.getData());
         return "ok";
 	}
 	
-	@RequestMapping("/setTestDataIfAbsent")
-	public String setTestDataIfAbsent(@RequestBody String data)
+	@PostMapping("/setTestDataIfAbsent")
+	public String setTestDataIfAbsent(@RequestBody RedisStringParamBean paramBean)
 	{
-        return "是否有資料寫入: " + redisStringTypeService.setTestDataIfAbsent(data);
+        return "是否有資料寫入: " + redisStringTypeService.setTestDataIfAbsent(paramBean.getData());
 	}
 	
-	@RequestMapping("/setTestDataIfPresent")
-	public String setTestDataIfPresent(@RequestBody String data)
+	@PostMapping("/setTestDataIfPresent")
+	public String setTestDataIfPresent(@RequestBody RedisStringParamBean paramBean)
 	{
-        return "是否有資料寫入: " + redisStringTypeService.setTestDataIfPresent(data);
+        return "是否有資料寫入: " + redisStringTypeService.setTestDataIfPresent(paramBean.getData());
 	}
 	
-	@RequestMapping("/deleteTestData")
+	@PostMapping("/deleteTestData")
 	public String deleteTestData() {
 		return "是否有資料被刪除: " + redisStringTypeService.deleteTestData();
 	}
 	
-	@RequestMapping("/getTestData")
+	@PostMapping("/getTestData")
 	public String getTestData() {
 		return redisStringTypeService.getTestData();
 	}
