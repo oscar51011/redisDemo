@@ -1,0 +1,360 @@
+{
+	"info": {
+		"_postman_id": "07611755-1963-4998-a28c-54b3cb6345f0",
+		"name": "redisDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Hash",
+			"item": [
+				{
+					"name": "hash/setHashData",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/hash/setHashData",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"hash",
+								"setHashData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hash/getHashData",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/hash/getHashUserField",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"hash",
+								"getHashUserField"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hash/deleteHashData",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/hash/deleteHashData",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"hash",
+								"deleteHashData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hash/addHashField",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hashKey\": \"key1\",\r\n    \"hashValue\": \"value1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/hash/addHashField",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"hash",
+								"addHashField"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hash/deleteHashField",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hashKey\": \"key1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/hash/deleteHashField",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"hash",
+								"deleteHashField"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "String",
+			"item": [
+				{
+					"name": "string/setTestDataIfPresent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":\"present\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/string/setTestDataIfPresent",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"string",
+								"setTestDataIfPresent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "string/setTestData",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":\"simple data\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/string/setTestData",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"string",
+								"setTestData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "string/getTestData",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/string/getTestData",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"string",
+								"getTestData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "string/deleteTestData",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/string/deleteTestData",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"string",
+								"deleteTestData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "string/setTestDataIfAbsent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":\"absent\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/string/setTestDataIfAbsent",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"string",
+								"setTestDataIfAbsent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Json",
+			"item": [
+				{
+					"name": "json/setUserJsonData",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/json/setUserJsonData",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"json",
+								"setUserJsonData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "json/getUserJsonData",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/json/getUserJsonData",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"json",
+								"getUserJsonData"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
