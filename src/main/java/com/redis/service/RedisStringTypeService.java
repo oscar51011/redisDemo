@@ -8,6 +8,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Service;
 
+import com.redis.exception.RedisException;
+
 /**
  * String Type 一般操作 redis 服務
  * 
@@ -22,9 +24,6 @@ public class RedisStringTypeService {
 	@Autowired
     private RedisTemplate<String, String> redisTemplate;
 	
-	@Autowired
-    private RedisTemplate<Object, Object> redisTemplate2;
-	
 	private void setStringSerializer(){
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setValueSerializer(new StringRedisSerializer());
@@ -32,8 +31,7 @@ public class RedisStringTypeService {
 	
 	public String getTestData() {
 		String data = redisTemplate.opsForValue().get(TEST_KEY);
-		if(data == null)
-			data = "資料不存在";
+		if(data == null) throw new RedisException("找無此資料");
 		return data;
 	}
 	
