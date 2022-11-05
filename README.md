@@ -10,3 +10,4 @@
 Reference:
 - [redis](https://redis.io/)
 - [docker-redis](https://hub.docker.com/_/redis)
+- [spring-data-redis](https://docs.spring.io/spring-data/redis/docs/current/reference/html/#redis:template)
