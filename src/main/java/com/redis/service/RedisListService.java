@@ -29,7 +29,6 @@ public class RedisListService {
 	public void pushDataFromLeft(String data) {
 		setStringSerializer();
 		Long count = redisTemplate.opsForList().leftPush(JSON_KEY, data);
-		System.out.println("寫入筆數:" + count );
 	}
 	
 	public String popDataFromLeft() {
