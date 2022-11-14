@@ -28,7 +28,7 @@ public class RedisListService {
 	
 	public void pushDataFromLeft(String data) {
 		setStringSerializer();
-		Long count = redisTemplate.opsForList().leftPush(JSON_KEY, data);
+		redisTemplate.opsForList().leftPush(JSON_KEY, data);
 	}
 	
 	public String popDataFromLeft() {
