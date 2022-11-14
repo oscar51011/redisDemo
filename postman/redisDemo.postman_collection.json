@@ -355,6 +355,268 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "List",
+			"item": [
+				{
+					"name": "list/pushDataFromLeft",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": \"l1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/list/pushDataFromLeft",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"list",
+								"pushDataFromLeft"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list/pushDataFromRight",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": \"r1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/list/pushDataFromRight",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"list",
+								"pushDataFromRight"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list/popDataFromLeft",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/list/popDataFromLeft",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"list",
+								"popDataFromLeft"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list/popDataFromRight",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/list/popDataFromRight",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"list",
+								"popDataFromRight"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list/getListSize",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/list/getListSize",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"list",
+								"getListSize"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Set",
+			"item": [
+				{
+					"name": "/sort/addData",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": \"one\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/sort/addData",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"sort",
+								"addData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/sort/randomPopData",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/sort/randomPopData",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"sort",
+								"randomPopData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/sort/isDataExist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": \"one\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/sort/isDataExist",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"sort",
+								"isDataExist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/sort/getMembers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redis/sort/getMembers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redis",
+								"sort",
+								"getMembers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
