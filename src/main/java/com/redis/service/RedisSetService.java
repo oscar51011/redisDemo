@@ -1,52 +1,59 @@
 package com.redis.service;
 
+import java.util.Set;
+
 import javax.annotation.Resource;
 
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Service;
 
-
 /**
- * 處理 redis 集合服務 - List 
+ * 處理 redis 集合服務 - Set 
  * 
  * @author oscar51011
  *
  */
 @Service
-public class RedisListService {
+public class RedisSetService {
 
-	private static final String LIST_KEY = "LIST";
-	
 	@Resource
     private RedisTemplate<String, String> redisTemplate;
 	
+	private static final String SORT_KEY = "SORT";
+
 	private void setStringSerializer(){
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setValueSerializer(new StringRedisSerializer());
     }
 	
-	public void pushDataFromLeft(String data) {
+	public Long addData(String data) {
 		setStringSerializer();
-		redisTemplate.opsForList().leftPush(LIST_KEY, data);
+		return redisTemplate.opsForSet().add(SORT_KEY, data);
 	}
 	
-	public String popDataFromLeft() {
+	/**
+	 * 隨機刪除 member
+	 * @return
+	 */
+	public String randomPopData() {
 		setStringSerializer();
-		return redisTemplate.opsForList().leftPop(LIST_KEY);
+		return redisTemplate.opsForSet().pop(SORT_KEY);
 	}
 	
-	public void pushDataFromRight(String data) {
+	/**
+	 * 檢查資料是否存在於 Set中
+	 * @param data
+	 * @return
+	 */
+	public boolean isDataExist(String data) {
 		setStringSerializer();
-		redisTemplate.opsForList().rightPush(LIST_KEY, data);
+		return redisTemplate.opsForSet().isMember(SORT_KEY, data);
 	}
 	
-	public String popDataFromRight() {
+	public Set<String> getMembers() {
 		setStringSerializer();
-		return redisTemplate.opsForList().rightPop(LIST_KEY);
+		return redisTemplate.opsForSet().members(SORT_KEY);
 	}
-	
-	public long getListSize() {
-		return redisTemplate.opsForList().size(LIST_KEY);
-	}
+
 }
